@@ -12,7 +12,7 @@ class Trendingslider extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: CarouselSlider.builder(
-        itemCount: snapshot.data.length,
+        itemCount: snapshot.data!.length,
         options: CarouselOptions(
           height: 300,
           autoPlay: true,

@@ -18,10 +18,10 @@ class _HomepageState extends State<Homepage> {
   late Future<List<Movies>> upComingMovies;
   @override
   void initState() {
-    super.initState();
     trendingMovies = Api().getTrendingMovies();
     topRatedMovies = Api().getTopratedMovies();
     upComingMovies = Api().getUpcomingMovies();
+    super.initState();
   }
 
   @override

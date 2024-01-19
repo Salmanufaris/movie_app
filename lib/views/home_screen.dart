@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_movieapp/api/api.dart';
 import 'package:flutter_application_movieapp/models/movies.dart';
@@ -89,7 +91,6 @@ class _HomepageState extends State<Homepage> {
                           child: Text(snapshot.error.toString()),
                         );
                       } else if (snapshot.hasData) {
-                        final data = snapshot.data;
                         return Movieslider(
                           snapshot: snapshot,
                         );
@@ -117,7 +118,6 @@ class _HomepageState extends State<Homepage> {
                           child: Text(snapshot.error.toString()),
                         );
                       } else if (snapshot.hasData) {
-                        final data = snapshot.data;
                         return Movieslider(
                           snapshot: snapshot,
                         );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_movieapp/views/home_screen.dart';
+import 'package:flutter_application_movieapp/widgets/bottombar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
-      home: const Homepage(),
+      home: const BottombarScreen(),
     );
   }
 }

@@ -7,4 +7,10 @@ class Constant {
       'https://api.themoviedb.org/3/movie/top_rated?api_key=${Constant.apikey}';
   static const upComing =
       'https://api.themoviedb.org/3/trending/movie/day?api_key=${Constant.apikey}';
+
+  static const airing =
+      'https://api.themoviedb.org/3/tv/airing_today?api_key=${Constant.apikey}';
+
+  static const top =
+      'https://api.themoviedb.org/3/tv/top_rated?api_key=${Constant.apikey}';
 }

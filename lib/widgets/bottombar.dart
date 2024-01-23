@@ -15,9 +15,9 @@ class _BottombarScreenState extends State<BottombarScreen> {
   int _currentIndex = 0;
   final List _screens = [
     const Homepage(),
-    const TvScreen(),
+    const Tvpage(),
+    const Moviepage(),
     const SearchScreen(),
-    const MovieScreen(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_movieapp/constants/constant.dart';
 import 'package:flutter_application_movieapp/controller/homneproveer.dart';
-import 'package:flutter_application_movieapp/widgets/constants.dart';
+
 import 'package:flutter_application_movieapp/widgets/toprated.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

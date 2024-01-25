@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_movieapp/constants/constant.dart';
 import 'package:flutter_application_movieapp/views/detail_screen.dart';
-import 'package:flutter_application_movieapp/widgets/constants.dart';
 
 class Trendingslider extends StatelessWidget {
   const Trendingslider({super.key, required this.snapshot});

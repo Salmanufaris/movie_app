@@ -16,8 +16,6 @@ class Api {
           return Movies.fromJson(json);
         }).toList();
       } else {
-        print("Something is missing");
-
         return [];
       }
     } catch (e) {
@@ -35,8 +33,8 @@ class Api {
           return Movies.fromJson(json);
         }).toList();
       } else {
-        print("Something is missing");
-        //  print("status error:- ${response.statusCode}");
+        // print("Something is missing");
+        // //  print("status error:- ${response.statusCode}");
         return [];
       }
     } catch (e) {

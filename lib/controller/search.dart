@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_movieapp/api/api.dart';
+import 'package:flutter_application_movieapp/constants/constant.dart';
 import 'package:flutter_application_movieapp/models/movies.dart';
-import 'package:flutter_application_movieapp/widgets/constants.dart';
 
 class SearchProvider extends ChangeNotifier {
   TextEditingController searchController = TextEditingController();
@@ -19,7 +19,7 @@ class SearchProvider extends ChangeNotifier {
         searchedResult = movies;
         notifyListeners();
       } catch (e) {
-        print("Error: $e");
+        // print("Error: $e");
         Exception(e);
         notifyListeners();
       }

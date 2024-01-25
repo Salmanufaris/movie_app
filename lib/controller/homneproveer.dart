@@ -13,8 +13,6 @@ class HomeProvider extends ChangeNotifier {
       notifyListeners();
       return movies;
     } catch (error) {
-      print('errorrr fetching movies: $error');
-
       Exception(error);
       notifyListeners();
     }

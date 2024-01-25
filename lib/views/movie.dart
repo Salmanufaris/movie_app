@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_movieapp/api/api.dart';
-import 'package:flutter_application_movieapp/models/movies.dart';
+import 'package:flutter_application_movieapp/controller/homneproveer.dart';
+import 'package:flutter_application_movieapp/widgets/constants.dart';
 import 'package:flutter_application_movieapp/widgets/toprated.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class Moviepage extends StatefulWidget {
   const Moviepage({super.key});
@@ -12,19 +13,9 @@ class Moviepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Moviepage> {
-  late Future<List<Movies>> trendingMovies;
-  late Future<List<Movies>> topRatedMovies;
-  late Future<List<Movies>> airmovies;
-
-  @override
-  void initState() {
-    topRatedMovies = Api().getTopratedMovies();
-    airmovies = Api().getUairMovies();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
+    final pro = Provider.of<HomeProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -60,7 +51,8 @@ class _HomepageState extends State<Moviepage> {
               ),
               SizedBox(
                 child: FutureBuilder(
-                    future: topRatedMovies,
+                    future: pro.getHomeDAta(
+                        url: Constant.topRated, context: context),
                     builder: (context, snapshot) {
                       if (snapshot.hasError) {
                         return Center(
@@ -80,7 +72,8 @@ class _HomepageState extends State<Moviepage> {
               ),
               SizedBox(
                 child: FutureBuilder(
-                    future: airmovies,
+                    future:
+                        pro.getHomeDAta(url: Constant.airing, context: context),
                     builder: (context, snapshot) {
                       if (snapshot.hasError) {
                         return Center(
@@ -97,7 +90,8 @@ class _HomepageState extends State<Moviepage> {
               ),
               SizedBox(
                 child: FutureBuilder(
-                    future: topRatedMovies,
+                    future:
+                        pro.getHomeDAta(url: Constant.top, context: context),
                     builder: (context, snapshot) {
                       if (snapshot.hasError) {
                         return Center(

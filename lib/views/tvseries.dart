@@ -1,11 +1,13 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_movieapp/api/api.dart';
-import 'package:flutter_application_movieapp/models/movies.dart';
+import 'package:flutter_application_movieapp/controller/homneproveer.dart';
+
+import 'package:flutter_application_movieapp/widgets/constants.dart';
 import 'package:flutter_application_movieapp/widgets/toprated.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class Tvpage extends StatefulWidget {
   const Tvpage({super.key});
@@ -15,19 +17,9 @@ class Tvpage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Tvpage> {
-  late Future<List<Movies>> airmovies;
-  late Future<List<Movies>> topmovies;
-  late Future<List<Movies>> topRatedMovies;
-  @override
-  void initState() {
-    airmovies = Api().getUairMovies();
-    topmovies = Api().getopMovies();
-    topRatedMovies = Api().getTopratedMovies();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
+    final pro = Provider.of<HomeProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -63,7 +55,8 @@ class _HomepageState extends State<Tvpage> {
               ),
               SizedBox(
                 child: FutureBuilder(
-                    future: airmovies,
+                    future:
+                        pro.getHomeDAta(url: Constant.airing, context: context),
                     builder: (context, snapshot) {
                       if (snapshot.hasError) {
                         return Center(
@@ -83,7 +76,8 @@ class _HomepageState extends State<Tvpage> {
               ),
               SizedBox(
                 child: FutureBuilder(
-                    future: topmovies,
+                    future:
+                        pro.getHomeDAta(url: Constant.top, context: context),
                     builder: (context, snapshot) {
                       if (snapshot.hasError) {
                         return Center(
@@ -100,7 +94,8 @@ class _HomepageState extends State<Tvpage> {
               ),
               SizedBox(
                 child: FutureBuilder(
-                    future: topRatedMovies,
+                    future: pro.getHomeDAta(
+                        url: Constant.topRated, context: context),
                     builder: (context, snapshot) {
                       if (snapshot.hasError) {
                         return Center(

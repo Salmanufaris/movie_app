@@ -1,35 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_movieapp/controller/bottombar.dart';
 import 'package:flutter_application_movieapp/views/home_screen.dart';
 import 'package:flutter_application_movieapp/views/movie.dart';
 import 'package:flutter_application_movieapp/views/search.dart';
 import 'package:flutter_application_movieapp/views/tvseries.dart';
+import 'package:provider/provider.dart';
 
-class BottombarScreen extends StatefulWidget {
-  const BottombarScreen({super.key});
-
-  @override
-  State<BottombarScreen> createState() => _BottombarScreenState();
-}
-
-class _BottombarScreenState extends State<BottombarScreen> {
-  int _currentIndex = 0;
-  final List _screens = [
-    const Homepage(),
-    const Tvpage(),
-    const Moviepage(),
-    const SearchScreen(),
-  ];
+class BottombarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<BottomBarProvider>(context);
+
+    final List<Widget> _screens = [
+      const Homepage(),
+      const Tvpage(),
+      const Moviepage(),
+      const SearchScreen(),
+    ];
+
     return Scaffold(
-      body: _screens[_currentIndex],
+      body: _screens[provider.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
+        currentIndex: provider.currentIndex,
         onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
+          provider.setIndex(index);
         },
         items: const [
           BottomNavigationBarItem(
@@ -46,7 +41,7 @@ class _BottombarScreenState extends State<BottombarScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: "search",
+            label: "Search",
           ),
         ],
       ),

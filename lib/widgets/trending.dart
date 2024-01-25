@@ -29,8 +29,9 @@ class Trendingslider extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) =>
-                        Detailscreen(movie: snapshot.data[itemIndex])));
+                    builder: (context) => DetailesScreen(
+                        id: snapshot.data[itemIndex].id,
+                        movie: snapshot.data[itemIndex])));
               },
               child: SizedBox(
                 height: 300,

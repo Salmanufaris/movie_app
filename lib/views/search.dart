@@ -76,7 +76,8 @@ class SearchScreen extends StatelessWidget {
                     ),
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => Detailscreen(
+                        builder: (context) => DetailesScreen(
+                          id: searchData.id!,
                           movie: searchData,
                         ),
                       ));
@@ -90,7 +91,7 @@ class SearchScreen extends StatelessWidget {
           else
             Center(
               child: Text(
-                "You Can Search Here Your Movie",
+                "You can search here movies you want",
                 style: GoogleFonts.aBeeZee(
                   fontSize: 20,
                   fontWeight: FontWeight.w800,

@@ -22,8 +22,9 @@ class Upcomingslider extends StatelessWidget {
             child: GestureDetector(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) =>
-                        Detailscreen(movie: snapshot.data[index])));
+                    builder: (context) => DetailesScreen(
+                        id: snapshot.data[index].id,
+                        movie: snapshot.data[index])));
               },
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),

@@ -13,4 +13,6 @@ class Constant {
 
   static const top =
       'https://api.themoviedb.org/3/tv/top_rated?api_key=${Constant.apikey}';
+
+  static const castPoint = "/credits?";
 }

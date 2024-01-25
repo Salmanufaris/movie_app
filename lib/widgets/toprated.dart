@@ -24,8 +24,9 @@ class Movieslider extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            Detailscreen(movie: snapshot.data[index])));
+                        builder: (context) => DetailesScreen(
+                            id: snapshot.data[index].id,
+                            movie: snapshot.data[index])));
               },
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),

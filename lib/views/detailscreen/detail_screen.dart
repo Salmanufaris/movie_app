@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_movieapp/api/api.dart';
+import 'package:flutter_application_movieapp/service/api.dart';
 import 'package:flutter_application_movieapp/constants/constant.dart';
 import 'package:flutter_application_movieapp/models/cast.dart';
 import 'package:flutter_application_movieapp/models/movies.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class DetailesScreen extends StatelessWidget {
@@ -67,67 +66,69 @@ class DetailesScreen extends StatelessWidget {
                 const SizedBox(
                   height: 16,
                 ),
-                SizedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(10),
+                Column(children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          'Release Date :  ',
+                          style: GoogleFonts.acme(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300,
+                          ),
                         ),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Release Date :  ',
-                              style: GoogleFonts.acme(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            ),
-                            Text(
-                              movie.releaseDate!,
-                              style: GoogleFonts.acme(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w300,
-                              ),
-                            )
-                          ],
+                        Text(
+                          movie.releaseDate!,
+                          style: GoogleFonts.acme(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          'Rating  ',
+                          style: GoogleFonts.acme(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  width: 140,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        'Rating ',
-                        style: GoogleFonts.acme(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w300,
+                        const Icon(
+                          Icons.star,
+                          color: Colors.amber,
                         ),
-                      ),
-                      const Icon(
-                        Icons.star,
-                        color: Colors.amber,
-                      ),
-                      Text('${movie.voteAverage!.toStringAsFixed(1)}/10')
-                    ],
+                        Text(
+                          ('${movie.voteAverage!.toStringAsFixed(1)}/10'),
+                          style: GoogleFonts.acme(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ]),
                 FutureBuilder(
-                  // future:Provider.of<CastProvider>(context,listen: false).loadCast(context, id),
                   future: Api().getCast(
                     castUrl:
                         'https://api.themoviedb.org/3/movie/$id/credits?api_key=b3e0d3eff8d8a525377abdb307695baa',

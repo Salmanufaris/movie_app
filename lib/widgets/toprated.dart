@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_movieapp/constants/constant.dart';
-import 'package:flutter_application_movieapp/views/detail_screen.dart';
+import 'package:flutter_application_movieapp/views/detailscreen/detail_screen.dart';
 
 class Movieslider extends StatelessWidget {
   const Movieslider({super.key, required this.snapshot});

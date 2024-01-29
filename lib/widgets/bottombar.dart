@@ -1,11 +1,11 @@
 // ignore_for_file: use_key_in_widget_constructors, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_movieapp/controller/bottombar.dart';
-import 'package:flutter_application_movieapp/views/home_screen.dart';
-import 'package:flutter_application_movieapp/views/movie.dart';
-import 'package:flutter_application_movieapp/views/search.dart';
-import 'package:flutter_application_movieapp/views/tvseries.dart';
+import 'package:flutter_application_movieapp/controller/bottombar_provider.dart';
+import 'package:flutter_application_movieapp/views/homescreen/home_screen.dart';
+import 'package:flutter_application_movieapp/views/moviescreen/movie.dart';
+import 'package:flutter_application_movieapp/views/searchscreen/search.dart';
+import 'package:flutter_application_movieapp/views/tvseriesscreen/tvseries.dart';
 import 'package:provider/provider.dart';
 
 class BottombarScreen extends StatelessWidget {

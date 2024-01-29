@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_movieapp/controller/bottombar.dart';
-import 'package:flutter_application_movieapp/controller/homneproveer.dart';
-import 'package:flutter_application_movieapp/controller/search.dart';
+import 'package:flutter_application_movieapp/controller/bottombar_provider.dart';
+import 'package:flutter_application_movieapp/controller/home_provider.dart';
+import 'package:flutter_application_movieapp/controller/search_provider.dart';
 import 'package:flutter_application_movieapp/widgets/bottombar.dart';
 import 'package:provider/provider.dart';
 

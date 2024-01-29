@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_movieapp/api/api.dart';
+import 'package:flutter_application_movieapp/service/api.dart';
 import 'package:flutter_application_movieapp/models/movies.dart';
 
 class HomeProvider extends ChangeNotifier {

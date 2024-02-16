@@ -4,8 +4,9 @@ import 'package:flutter_application_movieapp/models/movies.dart';
 
 class HomeProvider extends ChangeNotifier {
   final Api movieApiService = Api();
-  List<Movies> movies = [];
+
   Future getHomeDAta({required url, required BuildContext context}) async {
+    List<Movies> movies = [];
     try {
       List<Movies> movieResults =
           await movieApiService.getMovies(apiUrl: url, context: context);

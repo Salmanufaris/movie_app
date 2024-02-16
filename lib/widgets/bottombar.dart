@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_movieapp/controller/bottombar_provider.dart';
-import 'package:flutter_application_movieapp/views/homescreen/home_screen.dart';
-import 'package:flutter_application_movieapp/views/moviescreen/movie.dart';
-import 'package:flutter_application_movieapp/views/searchscreen/search.dart';
-import 'package:flutter_application_movieapp/views/tvseriesscreen/tvseries.dart';
+import 'package:flutter_application_movieapp/views/home_screen/home_screen.dart';
+import 'package:flutter_application_movieapp/views/movie_screen/movie.dart';
+import 'package:flutter_application_movieapp/views/search_screen/search_screen.dart';
+import 'package:flutter_application_movieapp/views/tvseries_screen/tvseries_screen.dart';
 import 'package:provider/provider.dart';
 
 class BottombarScreen extends StatelessWidget {
